@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "332061428097",
+    "project_id": "sabeel-4fc06",
+    "storage_bucket": "sabeel-4fc06.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:332061428097:android:594b9f60f6d5664ed74080",
+        "android_client_info": {
+          "package_name": "farzamhabibkhan.com.donor_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "332061428097-buroq83bebnv1d2924m9hao6h77r57tc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6drpTDnKWppK7gn7E4cbgjOAs1eMswas"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "332061428097-buroq83bebnv1d2924m9hao6h77r57tc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
