@@ -1,0 +1,122 @@
+---
+swagger: "2.0"
+info:
+  x-ibm-name: cashdeposit
+  title: CashDeposit
+  version: 1.0.0
+  description: This API will be used for financial merchants only where real-time
+    buying & selling is available for EasyPaisa customers.
+schemes:
+- https
+basePath: /cashdeposit
+consumes:
+- application/json
+produces:
+- application/json
+securityDefinitions:
+  clientSecretHeader:
+    type: apiKey
+    description: ""
+    in: header
+    name: X-IBM-Client-Secret
+  clientIdHeader:
+    type: apiKey
+    in: header
+    name: X-IBM-Client-Id
+    description: 0d102e36-57d3-4b1a-b92e-e77942dd4c28
+security:
+- clientIdHeader: []
+  clientSecretHeader: []
+x-ibm-configuration:
+  testable: true
+  enforced: true
+  phase: realized
+paths:
+  /cashdeposit:
+    post:
+      responses:
+        200:
+          description: 200 OK
+          schema:
+            $ref: '#/definitions/Cash Deposit Response'
+      deprecated: false
+      parameters:
+      - name: Access-Token
+        type: string
+        required: true
+        in: header
+      - name: Request
+        required: true
+        in: body
+        schema:
+          $ref: '#/definitions/Cash Deposit Request'
+      - name: Authorization
+        type: string
+        required: true
+        in: header
+      - name: Encrypt
+        type: string
+        required: true
+        in: header
+  /gen:
+    get:
+      responses:
+        200:
+          description: 200 OK
+      parameters:
+      - name: iss-claim
+        type: string
+        required: true
+        in: header
+        description: Enter https://myidp.ibm.com
+      - name: aud-claim
+        type: string
+        required: true
+        in: header
+        description: Enter ClientID1
+definitions:
+  Cash Deposit Request:
+    properties:
+      merchantID:
+        type: string
+      appID:
+        type: string
+      orderId:
+        type: string
+      credentials:
+        type: string
+      extendInfo:
+        type: string
+      merchantMsisdn:
+        type: string
+      msisdn:
+        type: string
+      openId:
+        type: string
+      transactionDesc:
+        type: string
+    additionalProperties: false
+  Cash Deposit Response:
+    properties:
+      orderId:
+        type: string
+      responseCode:
+        type: string
+      responseResult:
+        type: string
+      requestDate:
+        type: string
+      resultCode:
+        type: string
+      resultStatus:
+        type: string
+      resultMessage:
+        type: string
+    additionalProperties: false
+tags: []
+x-ibm-endpoints:
+- endpointUrl: https://api.eu-de.apiconnect.appdomain.cloud/easypaisaapigw-telenorbankpk-tmbdev/dev-catalog
+  type:
+  - production
+  - development
+...
